@@ -13,7 +13,7 @@ import { contact, site } from '../../config/site.ts';
  */
 export const prerender = false;
 
-const EXPEDITEUR = 'CP SOLUTIONS <formulaire@cpsolutions77.com>';
+const EXPEDITEUR = 'CP SOLUTIONS <onboarding@resend.dev>';
 
 function echapper(v: string): string {
   return v
