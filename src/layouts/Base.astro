@@ -6,6 +6,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import BarreAction from '../components/BarreAction.astro';
 import { localBusiness, webSite } from '../lib/schema.ts';
+import SpeedInsights from '@vercel/speed-insights/astro';
 
 interface Props {
   title: string;
@@ -61,6 +62,7 @@ const schemas = [
 
     <Seo {...seo} />
     <JsonLd data={schemas} />
+    <SpeedInsights />
   </head>
 
   <body>
