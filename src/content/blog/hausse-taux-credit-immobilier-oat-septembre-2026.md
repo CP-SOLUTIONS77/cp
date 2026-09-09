@@ -1,6 +1,6 @@
 ---
-titre: Crédit immobilier : pourquoi les taux remontent cette rentrée
-description: L'OAT 10 ans, le taux auquel l'État français emprunte, a atteint début septembre son plus haut niveau depuis 2008. Ce que cela change pour votre taux de crédit immobilier.
+titre: "Crédit immobilier : pourquoi les taux remontent cette rentrée"
+description: "L'OAT 10 ans, le taux auquel l'État français emprunte, a atteint début septembre son plus haut niveau depuis 2008. Ce que cela change pour votre taux de crédit immobilier."
 date: 2026-09-09
 metier: credits
 liens:
