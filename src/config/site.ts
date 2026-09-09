@@ -44,7 +44,7 @@ export const address = {
 export type DaySlots = readonly (readonly [string, string])[] | null;
 
 export const hours: readonly { day: string; short: string; iso: string; slots: DaySlots }[] = [
-  { day: 'Lundi', short: 'Lun', iso: 'Monday', slots: [['09:30', '12:30'], ['14:30', '16:30']] },
+  { day: 'Lundi', short: 'Lun', iso: 'Monday', slots: [['09:30', '12:30'], ['13:30', '16:30']] },
   { day: 'Mardi', short: 'Mar', iso: 'Tuesday', slots: [['09:30', '12:30'], ['14:00', '18:00']] },
   { day: 'Mercredi', short: 'Mer', iso: 'Wednesday', slots: [['09:30', '12:30'], ['14:00', '18:00']] },
   { day: 'Jeudi', short: 'Jeu', iso: 'Thursday', slots: [['09:30', '12:30'], ['14:00', '18:00']] },
