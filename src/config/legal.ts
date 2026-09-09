@@ -18,7 +18,7 @@ export const company = {
   siret: '903 877 066 00014',
   ape: '6622Z',
   rcs: 'RCS Melun', // TODO client : vérifier le greffe (Melun pour la Seine-et-Marne)
-  vatNumber: TODO, // TODO client : n° TVA intracommunautaire, si assujetti
+  vatNumber: 'TVA non applicable, art. 293 B du CGI',
   publicationDirector: 'Paul Poirier',
 } as const;
 
@@ -49,7 +49,7 @@ export const financialGuarantee = {
 export const professionalAssociation = {
   name: 'ENDYA',
   /** Aucun numéro d'adhérent délivré par l'association. */
-  memberNumber: TODO,
+  memberNumber: "Non attribué par l'association",
 } as const;
 
 export const remuneration = {
