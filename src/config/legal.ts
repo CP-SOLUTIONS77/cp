@@ -12,10 +12,8 @@ export const TODO = '' as const;
 
 export const company = {
   name: 'CP SOLUTIONS',
-  /** TODO client (QUESTIONS-CLIENT n° 7) : « SAS », « SARL »... */
-  legalForm: TODO,
-  /** TODO client (n° 7) : capital social, ex. « 1 000 € ». */
-  capital: TODO,
+  legalForm: 'SARL',
+  capital: '5 000 €',
   siren: '903 877 066',
   siret: '903 877 066 00014',
   ape: '6622Z',
@@ -25,10 +23,8 @@ export const company = {
 } as const;
 
 export const orias = {
-  /** TODO client (n° 1) : numéro à 8 chiffres, vérifiable sur orias.fr. */
-  number: TODO,
-  /** TODO client (n° 1) : ex. ['COA', 'COBSP']. */
-  categories: [] as string[],
+  number: '21009019',
+  categories: ['COA', 'COBSP', 'MIOBSP'] as string[],
   registryUrl: 'https://www.orias.fr',
 } as const;
 
@@ -39,50 +35,42 @@ export const supervisor = {
 } as const;
 
 export const rcPro = {
-  /** TODO client (n° 5) : assureur de la RC professionnelle. */
-  insurer: TODO,
-  policyNumber: TODO,
+  insurer: 'Liberty Specialty Markets Europe Sarl (LSME), pour le compte de Liberty Mutual Insurance Europe SE — gestion par MATRISK Assurance',
+  policyNumber: 'MRCSBRO202210FR00000000045473A00',
   /** Textes de référence, affichés tels quels. */
   legalBasis: 'articles L.512-6 et L.512-7 du Code des assurances',
 } as const;
 
 export const financialGuarantee = {
-  /** TODO client (n° 5) : garant financier, si le cabinet encaisse des fonds. Sinon, indiquer « non applicable ». */
-  provider: TODO,
-  amount: TODO,
+  provider: 'Liberty Specialty Markets Europe Sarl (LSME), pour le compte de Liberty Mutual Insurance Europe SE — gestion par MATRISK Assurance',
+  amount: '115 000 € par sinistre et par période',
 } as const;
 
 export const professionalAssociation = {
-  /** TODO client (n° 2) : association professionnelle agréée (obligatoire COBSP). */
-  name: TODO,
+  name: 'ENDYA',
+  /** Aucun numéro d'adhérent délivré par l'association. */
   memberNumber: TODO,
 } as const;
 
 export const remuneration = {
   /**
-   * TODO client (n° 3). Valeurs possibles :
+   * Valeurs possibles :
    *  'commissions'  : rémunération par les compagnies et établissements partenaires
    *  'honoraires'   : honoraires facturés au client
    *  'mixte'        : les deux
    */
-  mode: TODO as '' | 'commissions' | 'honoraires' | 'mixte',
-  /** Barème ou montant des honoraires de courtage crédit, si applicable. */
+  mode: 'mixte' as '' | 'commissions' | 'honoraires' | 'mixte',
+  /** TODO client : barème ou montant des honoraires de courtage crédit, si applicable. */
   feesDetail: TODO,
 } as const;
 
 export const financialLinks = {
-  /**
-   * TODO client (n° 4). Le cabinet détient-il > 10 % d'une entreprise d'assurance,
-   * ou une entreprise d'assurance détient-elle > 10 % du cabinet ?
-   * Laisser `null` tant que la réponse n'est pas connue.
-   */
-  hasLinks: null as null | boolean,
+  hasLinks: false as null | boolean,
   detail: TODO,
 } as const;
 
 export const complaints = {
-  /** TODO client (n° 6) : adresse e-mail dédiée aux réclamations. */
-  email: TODO,
+  email: 'contact@cpsolutions77.com',
   postalAddress: '35 rue Jean Jaurès, 77130 Montereau-Fault-Yonne',
   /** Délais réglementaires (recommandation ACPR 2022-R-01). */
   acknowledgementDays: '10 jours ouvrables',
@@ -96,10 +84,9 @@ export const mediators = {
     url: 'https://www.mediation-assurance.org',
   },
   credit: {
-    /** TODO client : médiateur désigné par l'association professionnelle (n° 2). */
-    name: TODO,
-    address: TODO,
-    url: TODO,
+    name: 'ANM Conso',
+    address: '2 rue de Colmar, 94300 Vincennes',
+    url: 'https://www.anm-conso.com',
   },
 } as const;
 
