@@ -3,5 +3,42 @@
   "note": 5,
   "nombre": 84,
   "releveLe": "2026-08-28",
-  "avis": []
+  "avis": [
+    {
+      "prenom": "Ramona I.",
+      "date": "2026-08-09",
+      "note": 5,
+      "texte": "Je tiens à remercier sincèrement Monsieur Riffault pour son écoute, ses explications toujours claires et sa disponibilité tout au long de mon dossier. Votre professionnalisme m'a vraiment mis en confiance, et je ne peux que vous recommander chaleureusement. Merci encore."
+    },
+    {
+      "prenom": "Benjamin",
+      "date": "2026-05-09",
+      "note": 5,
+      "texte": "J'ai fait appel à CP Solutions pour un crédit immobilier et je ne suis pas déçu. Calvin a réussi à nous trouver un taux très intéressant, correspondant à notre profil. Je recommande vivement. Merci encore !"
+    },
+    {
+      "prenom": "Anaïs P.",
+      "date": "2026-02-09",
+      "note": 5,
+      "texte": "Un grand merci à Calvin pour son accompagnement et professionnalisme tout au long de notre projet immobilier. Toujours disponible, réactif et d'excellent conseil ! Je recommande sans hésitation à toute personne cherchant un courtier de confiance et humain !"
+    },
+    {
+      "prenom": "Sophie P.",
+      "date": "2025-09-09",
+      "note": 5,
+      "texte": "FORMIDABLE ! Je pense que ce mot résume à lui seul notre collaboration et le grand professionnalisme de Calvin. J'avais un dossier compliqué et nouveau pour lui, mais il a réussi sa mission et grâce à lui mon projet immobilier a vu le jour. Très humain, il a su être à l'écoute et répondre à toutes mes craintes et interrogations. D'une réactivité incroyable, j'étais mise au courant des avancées après chaque rdv avec la banque. Il m'a soulagé d'un grand poids. Sans lui rien n'aurait été possible. Un très très grand merci Calvin, je vous recommanderai avec enthousiasme."
+    },
+    {
+      "prenom": "Ludovic B.",
+      "date": "2023-02-01",
+      "note": 5,
+      "texte": "MERCI !!! Créant ma société, j'ai trouvé en CP Solutions et notamment en la personne de Paul, un professionnalisme, une efficacité, une rapidité et de réels efforts dans les recherches de mes besoins. J'ai pu trouver l'ensemble de mes assurances, décennale, véhicule... sans pour autant me proposer des assurances superflues, en me conseillant. Un autre point de non des moindres, une DISPONIBILITÉ remarquable. Et c'est agréable d'avoir un interlocuteur et de ne pas se sentir comme un numéro. Je recommande à 1000%."
+    },
+    {
+      "prenom": "Rudy",
+      "date": "2023-07-01",
+      "note": 5,
+      "texte": "Un grand merci à Calvin Riffault pour son professionnalisme et sa disponibilité durant l'achat de notre première maison. Il a été présent à chaque étape de notre projet pour nous conseiller au mieux et nous apporter les solutions nécessaires. Encore merci de nous avoir aidés dans l'acquisition de notre maison !"
+    }
+  ]
 }
