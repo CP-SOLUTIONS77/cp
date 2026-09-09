@@ -427,9 +427,13 @@ const Titre = niveauTitre;
     gap: var(--e-4);
   }
 
-  @container (min-width: 34rem) {
+    @container (min-width: 34rem) {
     .form__duo {
       grid-template-columns: 1fr 1fr;
+    }
+
+    .form__duo > .champ + .champ {
+      margin-top: 0;
     }
   }
 </style>
