@@ -137,6 +137,7 @@ export const footerNav = {
     { label: 'Santé, animaux, voyage, GLI', href: '/assurances/autres' },
     { label: 'Assurance emprunteur', href: '/assurance-emprunteur' },
     { label: "Lexique de l'assurance", href: '/assurances/lexique' },
+    { label: 'Comparateur assurance emprunteur', href: 'https://monpretassure.fr' },
   ],
   credits: [
     { label: 'Prêt immobilier', href: '/credits/immobilier' },
