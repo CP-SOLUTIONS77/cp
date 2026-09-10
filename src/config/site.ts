@@ -145,6 +145,7 @@ export const footerNav = {
     { label: 'Assurance emprunteur', href: '/assurance-emprunteur' },
     { label: 'Simulateur de capacité d’emprunt', href: '/credits#simulateur' },
     { label: 'Lexique du crédit', href: '/credits/lexique' },
+    { label: 'Simulateur rachat de crédit', href: 'https://monrachatcredit.fr' },
   ],
   cabinet: [
     { label: 'Le cabinet', href: '/le-cabinet' },
