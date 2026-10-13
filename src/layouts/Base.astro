@@ -72,6 +72,65 @@ const schemas = [
       gtag("js", new Date());
       gtag("config", "G-L89Y0B39NF");
     </script>
+    <script>
+      const SITES = [
+        'cpsolutions77.com',
+        'monpretassure.fr',
+        'monrachatcredit.fr',
+        'monautoassure.fr',
+        'monhabitationassure.fr',
+      ];
+      const PRODUITS: Record<string, string> = {
+        '3a2004aa': 'auto',
+        de4ba9f1: 'moto',
+        '784ba6a2': 'habitation',
+        a4bdbd13: 'sante',
+        '312e7013': 'sante_animale',
+        '06e1eedf': 'decennale',
+        '92057954': 'dommage_ouvrage',
+      };
+
+      function envoyer(nom: string, params: Record<string, string>) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(..._args: unknown[]) {
+          window.dataLayer.push(arguments);
+        }
+        gtag('event', nom, params);
+      }
+
+      document.addEventListener('click', (e) => {
+        const lien = (e.target as Element | null)?.closest('a');
+        if (!lien) return;
+
+        const href = lien.getAttribute('href') ?? '';
+        const page = window.location.pathname;
+
+        if (href.startsWith('tel:')) return envoyer('click_telephone', { page });
+        if (href.startsWith('mailto:')) return envoyer('click_email', { page });
+
+        let url: URL;
+        try {
+          url = new URL(lien.href, window.location.href);
+        } catch {
+          return;
+        }
+
+        if (url.hostname.includes('calendly.com')) return envoyer('click_rendez_vous', { page });
+        if (url.hostname.includes('lyaprotect.com')) {
+          const id = (url.searchParams.get('id') ?? '').slice(0, 8);
+          return envoyer('click_devis_en_ligne', { page, produit: PRODUITS[id] ?? 'autre' });
+        }
+        if (url.hostname.includes('assurdistribution.fr')) {
+          return envoyer('click_devis_en_ligne', { page, produit: 'emprunteur' });
+        }
+
+        const cible = url.hostname.replace(/^www\./, '');
+        const courant = window.location.hostname.replace(/^www\./, '');
+        if (cible !== courant && SITES.includes(cible)) {
+          envoyer('click_site_interne', { page, destination: cible });
+        }
+      });
+    </script>
   </head>
 
   <body>
