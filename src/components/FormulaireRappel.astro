@@ -227,6 +227,9 @@ const Titre = niveauTitre;
         });
 
         if (reponse.ok) {
+          try {
+            sessionStorage.setItem('lead_demande', donnees.demande ?? '');
+          } catch {}
           window.location.assign('/contact/merci');
           return;
         }
