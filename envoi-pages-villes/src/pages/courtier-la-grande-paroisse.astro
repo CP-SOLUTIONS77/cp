@@ -1,0 +1,57 @@
+---
+import Ville from '../layouts/Ville.astro';
+import { googleReviews } from '../config/site.ts';
+
+const faq = [
+  {
+    question: "À quoi sert une prévoyance si j'ai déjà une mutuelle ?",
+    answer:
+      "La mutuelle rembourse vos frais de santé. La prévoyance verse des indemnités ou un capital en cas d'arrêt de travail, d'invalidité ou de décès, pour maintenir les revenus du foyer. Les deux sont complémentaires.",
+  },
+  {
+    question: "Peut-on financer un terrain et la construction d'une maison ?",
+    answer:
+      "Oui. Ce type de projet se finance avec un prêt immobilier dont les fonds sont débloqués au fur et à mesure de l'avancement du chantier. Nous vous aidons à bâtir le plan de financement global, terrain compris.",
+  },
+  {
+    question: "Assurez-vous aussi les locataires ?",
+    answer:
+      "Oui. Nous comparons les assurances habitation pour les locataires comme pour les propriétaires, en tenant compte de la surface, de vos biens et des garanties exigées par votre bail.",
+  },
+];
+---
+
+<Ville
+  slug="courtier-la-grande-paroisse"
+  title={"Courtier assurance et crédit à La Grande-Paroisse"}
+  description={"Courtier indépendant pour La Grande-Paroisse, Saint-Germain-Laval, Forges et Salins : mutuelle, prévoyance, habitation, prêt immobilier, assurance emprunteur. Étude gratuite."}
+  h1={"Courtier en assurance et en crédit à La Grande-Paroisse et Saint-Germain-Laval"}
+  chapeau={"À La Grande-Paroisse, Saint-Germain-Laval, Forges, Laval-en-Brie ou Salins, vous êtes à une dizaine de minutes de notre agence de Montereau-Fault-Yonne. CP Solutions, courtier indépendant, aide les familles du secteur à protéger ce qui compte : leur santé, leurs revenus, leur maison et leur projet immobilier."}
+  venir={"À environ 10 minutes en voiture de La Grande-Paroisse et de Saint-Germain-Laval. En train, la gare de La Grande-Paroisse est sur la ligne R du Transilien, comme Montereau, et l'agence est à une dizaine de minutes à pied de la gare de Montereau."}
+  faq={faq}
+>
+  <h2>Protéger votre famille : mutuelle et prévoyance</h2>
+  <p>Une mutuelle rembourse vos soins. Une prévoyance protège les revenus du foyer si un accident ou une maladie vous empêche de travailler. Les deux se complètent, et elles sont souvent mal ajustées :</p>
+  <ul>
+  <li><strong>Mutuelle familiale</strong> : nous partons de vos dépenses réelles (enfants, optique, dentaire) pour choisir le bon niveau de garanties.</li>
+  <li><strong>Prévoyance</strong> : indemnités en cas d'arrêt de travail, capital en cas d'invalidité ou de décès.</li>
+  <li><strong>Indépendants</strong> : des solutions adaptées quand on n'a pas de contrat d'entreprise.</li>
+  </ul>
+  <p class="liens">→ <a href="/assurances/autres">Mutuelle, prévoyance et autres assurances</a></p>
+  <h2>Acheter, construire ou agrandir</h2>
+  <p>Maison existante, terrain à bâtir avec construction, travaux d'agrandissement : chaque projet se finance différemment. Nous construisons votre plan de financement, interrogeons plusieurs banques partenaires et suivons votre dossier jusqu'à l'offre de prêt.</p>
+  <p class="liens">→ <a href="/credits/immobilier">Prêt immobilier</a> · <a href="/credits#simulateur">Simulateur</a></p>
+  <h2>Votre assurance emprunteur, à revoir</h2>
+  <p>Vous remboursez déjà un prêt ? La loi Lemoine vous permet de changer d'assurance emprunteur à tout moment, à garanties équivalentes. Nous comparons votre contrat actuel avec d'autres offres et vous disons si le changement vaut le coup.</p>
+  <p class="liens">→ <a href="/assurance-emprunteur">Assurance emprunteur</a></p>
+  <h2>Votre maison et vos véhicules</h2>
+  <p>Assurance habitation propriétaire ou locataire, assurance auto et moto : nous comparons les contrats et vérifions les garanties qui comptent vraiment pour vous.</p>
+  <p class="liens">→ <a href="/assurances/habitation">Habitation</a> · <a href="/assurances/auto-moto">Auto-moto</a></p>
+  <h2>Pourquoi CP Solutions ?</h2>
+  <ul>
+  <li><strong>Proche</strong> : environ 10 minutes en voiture, une agence où vous êtes reçu en personne.</li>
+  <li><strong>Indépendant</strong> : nous comparons plusieurs partenaires et vous expliquons nos recommandations.</li>
+  <li><strong>Suivi dans la durée</strong> : deux courtiers qui connaissent votre dossier.</li>
+  <li><strong>Noté {googleReviews.rating}/5 sur Google</strong>.</li>
+  </ul>
+</Ville>

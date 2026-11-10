@@ -1,0 +1,229 @@
+---
+import Page from './Page.astro';
+import Bouton from '../components/Bouton.astro';
+import Faq from '../components/Faq.astro';
+import Horaires from '../components/Horaires.astro';
+import { contact, address } from '../config/site.ts';
+import { villes, villeParSlug } from '../config/villes.ts';
+import { faqPage, serviceLocal, type FaqItem } from '../lib/schema.ts';
+
+/**
+ * Layout des pages ville (référencement local). La page fournit son texte en
+ * slot ; le layout pose les appels à l'action, l'accès à l'agence, la FAQ et
+ * les liens vers les villes du même secteur.
+ */
+interface Props {
+  /** Clé dans src/config/villes.ts, identique au nom du fichier. */
+  slug: string;
+  title: string;
+  description: string;
+  h1: string;
+  chapeau: string;
+  /** Accès à l'agence depuis cette ville : durée de trajet, train. */
+  venir: string;
+  faq: FaqItem[];
+}
+
+const { slug, title, description, h1, chapeau, venir, faq } = Astro.props;
+const ville = villeParSlug(slug);
+const path = `/${slug}`;
+const voisines = villes.filter((v) => v.secteur === ville.secteur && v.slug !== slug);
+---
+
+<Page
+  title={title}
+  description={description}
+  path={path}
+  h1={h1}
+  chapeau={chapeau}
+  crumbs={[{ label: "Zones d'intervention", href: '/zones-intervention' }]}
+  filCourant={ville.nom}
+  schema={[faqPage(faq), serviceLocal(ville.communes, path)]}
+>
+  <div class="conteneur ville-actions">
+    <Bouton href={contact.phoneHref} variante="accent" icone="ph:phone-fill">
+      Appeler le {contact.phoneDisplay}
+    </Bouton>
+    <Bouton href={contact.calendly} variante="contour" externe icone="ph:calendar-blank">
+      Prendre rendez-vous
+    </Bouton>
+    <Bouton href="/contact" variante="lien">Demander un rappel</Bouton>
+  </div>
+
+  <div class="section conteneur ville">
+    <slot />
+  </div>
+
+  <section class="section conteneur ville-venir">
+    <h2>Venir à l'agence</h2>
+    <div class="ville-venir__grille">
+      <div>
+        <address>
+          {address.street}<br />
+          {address.postalCode} {address.city}
+        </address>
+        <p>{venir}</p>
+        <Bouton href={address.mapsUrl} variante="contour" externe icone="ph:map-pin">
+          Itinéraire
+        </Bouton>
+      </div>
+      <div>
+        <h3 class="libelle">Horaires</h3>
+        <Horaires />
+      </div>
+    </div>
+  </section>
+
+  <section class="section conteneur">
+    <Faq items={faq} />
+  </section>
+
+  <section class="section conteneur ville-voisines">
+    <h2>Nous intervenons aussi à proximité</h2>
+    <ul>
+      {voisines.map((v) => <li><a href={`/${v.slug}`}>{v.nom}</a></li>)}
+      <li><a href="/agence-montereau">Montereau-Fault-Yonne</a></li>
+    </ul>
+    <p><a href="/zones-intervention">Toutes nos zones d'intervention</a></p>
+  </section>
+
+  <section class="section conteneur ville-final">
+    <h2>Parlons de votre projet</h2>
+    <p class="mesure">Un courtier répond, pas un serveur vocal. Première étude sans engagement.</p>
+    <div class="ville-final__actions">
+      <Bouton href={contact.phoneHref} variante="accent" taille="grand" icone="ph:phone-fill">
+        Appeler le {contact.phoneDisplay}
+      </Bouton>
+      <Bouton href="/contact" variante="contour">Demander un rappel</Bouton>
+    </div>
+  </section>
+</Page>
+
+<style>
+  .ville-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--e-3) var(--e-4);
+    padding-block: var(--e-6) 0;
+  }
+
+  /* Le texte vient de la page, en slot : les styles scopés ne l'atteignent qu'en :global. */
+  .ville :global(h2) {
+    margin-top: var(--e-12);
+    padding-top: var(--e-4);
+    border-top: var(--filet-fort);
+  }
+
+  .ville :global(h2:first-child) {
+    margin-top: 0;
+  }
+
+  .ville :global(p),
+  .ville :global(ul) {
+    max-width: var(--mesure);
+    margin-top: var(--e-3);
+  }
+
+  .ville :global(p) {
+    color: var(--encre-2);
+  }
+
+  .ville :global(ul) {
+    padding-left: 1.25em;
+    list-style: disc;
+  }
+
+  .ville :global(li + li) {
+    margin-top: var(--e-2);
+  }
+
+  .ville :global(strong) {
+    color: var(--encre);
+  }
+
+  .ville :global(.liens) {
+    margin-top: var(--e-4);
+    font-size: var(--t-small);
+  }
+
+  .ville-venir,
+  .ville-voisines,
+  .ville-final {
+    border-top: var(--filet);
+  }
+
+  .ville-venir__grille {
+    margin-top: var(--e-6);
+    display: grid;
+    gap: var(--e-8);
+  }
+
+  .ville-venir address {
+    font-style: normal;
+    font-family: var(--f-donnee);
+  }
+
+  .ville-venir p {
+    margin-top: var(--e-3);
+    max-width: 52ch;
+    color: var(--encre-2);
+  }
+
+  .ville-venir :global(.bouton) {
+    margin-top: var(--e-4);
+  }
+
+  .ville-venir h3 {
+    padding-bottom: var(--e-2);
+    border-bottom: var(--filet);
+    margin-bottom: var(--e-3);
+  }
+
+  .ville-voisines ul {
+    margin-top: var(--e-4);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--e-2) var(--e-3);
+  }
+
+  .ville-voisines li a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: var(--e-2) var(--e-3);
+    border: 1px solid var(--encre);
+    border-radius: var(--rayon);
+    font-size: var(--t-small);
+    color: var(--encre);
+    text-decoration: none;
+  }
+
+  .ville-voisines li a:hover {
+    background: var(--papier-2);
+  }
+
+  .ville-voisines p {
+    margin-top: var(--e-4);
+    font-size: var(--t-small);
+  }
+
+  .ville-final p {
+    margin-top: var(--e-3);
+    color: var(--encre-2);
+  }
+
+  .ville-final__actions {
+    margin-top: var(--e-6);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--e-3);
+  }
+
+  @media (min-width: 64rem) {
+    .ville-venir__grille {
+      grid-template-columns: 1.2fr 1fr;
+      gap: var(--e-16);
+    }
+  }
+</style>
