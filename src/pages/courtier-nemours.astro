@@ -1,0 +1,66 @@
+---
+import Ville from '../layouts/Ville.astro';
+import { googleReviews } from '../config/site.ts';
+
+const faq = [
+  {
+    question: "Mon assurance habitation couvre-t-elle les inondations ?",
+    answer:
+      "Les dommages dus à une inondation sont généralement pris en charge au titre de la garantie catastrophes naturelles, à condition qu'un arrêté de catastrophe naturelle soit publié pour votre commune. Les conditions exactes (franchise, délais de déclaration) dépendent de votre contrat. Nous pouvons le relire avec vous.",
+  },
+  {
+    question: "Je viens d'être résilié par mon assureur auto, que faire ?",
+    answer:
+      "Contactez-nous rapidement : nous travaillons avec des assureurs qui acceptent les conducteurs résiliés, y compris pour non-paiement ou sinistralité, et cherchons une solution adaptée.",
+  },
+  {
+    question: "Le rachat de crédit est-il fait pour moi ?",
+    answer:
+      "Cela dépend de vos crédits en cours, de vos revenus et de votre projet. Une étude personnalisée permet de le savoir. Elle est sans engagement.",
+  },
+  {
+    question: "Devez-vous vous déplacer à Nemours ?",
+    answer:
+      "Nous recevons à l'agence de Montereau, mais la plupart des dossiers se traitent à distance, par téléphone et par e-mail.",
+  },
+];
+---
+
+<Ville
+  slug="courtier-nemours"
+  title={"Courtier assurance et crédit à Nemours"}
+  description={"Assurance habitation, auto, emprunteur, prêt immobilier et rachat de crédit à Nemours : un courtier indépendant compare pour vous. Agence à 30 min, à Montereau."}
+  h1={"Courtier en assurance et en crédit à Nemours"}
+  chapeau={"À Nemours et à Saint-Pierre-lès-Nemours, on sait ce que vaut une bonne assurance habitation : les crues du Loing de juin 2016 l'ont rappelé à beaucoup de foyers. Comparer ses contrats, vérifier ses garanties, financer un achat ou réorganiser ses crédits : CP Solutions, courtier indépendant installé à Montereau-Fault-Yonne, accompagne les habitants du sud Seine-et-Marne dans toutes ces démarches."}
+  venir={"À environ 30 minutes en voiture de Nemours. Beaucoup de démarches peuvent se faire par téléphone et par e-mail, sans vous déplacer."}
+  faq={faq}
+>
+  <h2>Une assurance habitation qui vous couvre vraiment</h2>
+  <p>Le prix n'est pas le seul critère. Ce qui compte, c'est ce que le contrat couvre réellement le jour où vous en avez besoin. Nous examinons avec vous :</p>
+  <ul>
+  <li>les <strong>garanties</strong> (dégâts des eaux, catastrophes naturelles, vol, responsabilité civile) ;</li>
+  <li>les <strong>franchises</strong> et les <strong>plafonds d'indemnisation</strong> ;</li>
+  <li>l'<strong>adéquation</strong> entre le contrat et votre logement : maison en bord de rivière, appartement, résidence louée.</li>
+  </ul>
+  <p>Propriétaire, locataire ou bailleur (assurance PNO) : nous mettons plusieurs assureurs partenaires en concurrence et vous expliquons les différences, simplement.</p>
+  <p class="liens">→ Voir nos <a href="/assurances/habitation">assurances habitation</a></p>
+  <h2>Assurance auto et moto, même avec un dossier compliqué</h2>
+  <p>Résiliation par votre assureur, malus, permis suspendu ou annulé : de nombreux conducteurs se retrouvent sans solution. Nous connaissons les assureurs qui acceptent ces profils et cherchons la formule la plus adaptée à votre situation.</p>
+  <p class="liens">→ En savoir plus sur l'<a href="/assurances/auto-moto">assurance auto-moto</a></p>
+  <h2>Acheter à Nemours : votre prêt immobilier</h2>
+  <p>Premier achat, maison avec jardin, changement de résidence principale : nous évaluons votre capacité d'emprunt, interrogeons plusieurs banques partenaires et montons votre dossier de A à Z. Nous comparons aussi l'assurance emprunteur, qui pèse dans le coût total du crédit et que vous êtes libre de choisir.</p>
+  <p class="liens">→ <a href="/credits/immobilier">Prêt immobilier</a> · <a href="/assurance-emprunteur">Assurance emprunteur</a> · <a href="/credits#simulateur">Simulateur</a></p>
+  <h2>Rachat et regroupement de crédits</h2>
+  <p>Plusieurs crédits en cours, des mensualités devenues trop lourdes ? Le regroupement de crédits peut permettre de réunir vos prêts en une seule mensualité, souvent plus basse mais sur une durée plus longue, ce qui peut augmenter le coût total. Nous étudions votre situation et vous disons honnêtement si cette solution est pertinente pour vous.</p>
+  <p class="liens">→ Tout savoir sur le <a href="/credits/rachat-regroupement">rachat de crédit</a></p>
+  <h2>Artisans et indépendants du secteur de Nemours</h2>
+  <p>RC professionnelle, assurance décennale, multirisque professionnelle : nous assurons aussi les artisans, commerçants et indépendants, avec des contrats adaptés à leur métier.</p>
+  <p class="liens">→ <a href="/assurances/professionnels">Assurances professionnelles</a></p>
+  <h2>Pourquoi choisir CP Solutions ?</h2>
+  <ul>
+  <li><strong>Courtier indépendant</strong> : plusieurs partenaires comparés, aucun produit maison imposé.</li>
+  <li><strong>Proximité</strong> : une agence physique dans le sud Seine-et-Marne, à environ 30 minutes de Nemours.</li>
+  <li><strong>Clarté</strong> : nous vous expliquons votre contrat sans jargon.</li>
+  <li><strong>Satisfaction client</strong> : noté {googleReviews.rating}/5 sur Google.</li>
+  </ul>
+</Ville>

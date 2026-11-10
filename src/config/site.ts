@@ -150,6 +150,7 @@ export const footerNav = {
   cabinet: [
     { label: 'Le cabinet', href: '/le-cabinet' },
     { label: "L'agence de Montereau", href: '/agence-montereau' },
+    { label: "Zones d'intervention", href: '/zones-intervention' },
     { label: 'Blog', href: '/blog' },
     { label: 'Contact', href: '/contact' },
   ],

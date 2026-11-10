@@ -114,6 +114,19 @@ export function faqPage(items: FaqItem[]) {
   };
 }
 
+/** Service de courtage rattaché à une page ville : areaServed porte ses communes. */
+export function serviceLocal(communes: readonly string[], url: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `Courtage en assurances et crédits à ${communes[0]}`,
+    serviceType: 'Courtage en assurances et crédits',
+    url: `${site.url}${url}`,
+    provider: { '@id': ORG_ID },
+    areaServed: communes.map((name) => ({ '@type': 'City', name })),
+  };
+}
+
 export function service(name: string, description: string, url: string) {
   return {
     '@context': 'https://schema.org',

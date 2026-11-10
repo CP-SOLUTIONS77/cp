@@ -1,0 +1,127 @@
+---
+import Page from '../layouts/Page.astro';
+import Bouton from '../components/Bouton.astro';
+import { contact } from '../config/site.ts';
+import { secteurs, villes } from '../config/villes.ts';
+
+/*
+  Page carrefour des pages ville : elle les relie toutes entre elles et à
+  l'agence, ce qui aide Google à les découvrir et à les rattacher au cabinet.
+*/
+---
+
+<Page
+  title="Zones d'intervention : courtier en Seine-et-Marne et dans l'Yonne"
+  description="CP SOLUTIONS, courtier indépendant à Montereau, intervient à Fontainebleau, Melun, Nemours, Provins, Nangis, Sens et dans tout le sud Seine-et-Marne. Appelez le 01 64 24 83 45."
+  path="/zones-intervention"
+  h1="Nos zones d'intervention"
+  chapeau="Courtier en assurances et en crédits installé à Montereau-Fault-Yonne, nous accompagnons les particuliers et les professionnels de tout le sud Seine-et-Marne et du nord de l'Yonne, à l'agence comme à distance."
+  filCourant="Zones d'intervention"
+>
+  <section class="section conteneur zones">
+    <div class="zones__grille">
+      {
+        secteurs.map((s) => (
+          <div class="zones__secteur">
+            <h2>{s.label}</h2>
+            <ul>
+              {s.id === 'proche' && (
+                <li>
+                  <a href="/agence-montereau">Montereau-Fault-Yonne</a>
+                  <span>notre agence</span>
+                </li>
+              )}
+              {villes
+                .filter((v) => v.secteur === s.id)
+                .map((v) => (
+                  <li>
+                    <a href={`/${v.slug}`}>{v.nom}</a>
+                    {v.communes.length > 1 && <span>et {v.communes.slice(1).join(', ')}</span>}
+                  </li>
+                ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section conteneur zones-suite">
+    <h2>Votre commune n'est pas dans la liste ?</h2>
+    <p class="mesure">
+      Un courtier n'est pas limité à sa commune : nos partenaires assurent et financent
+      partout en France, et la plupart des dossiers se traitent par téléphone et par e-mail.
+    </p>
+    <div class="zones-suite__actions">
+      <Bouton href={contact.phoneHref} variante="accent" taille="grand" icone="ph:phone-fill">
+        Appeler le {contact.phoneDisplay}
+      </Bouton>
+      <Bouton href="/contact" variante="contour">Demander un rappel</Bouton>
+    </div>
+  </section>
+</Page>
+
+<style>
+  .zones__grille {
+    display: grid;
+    gap: var(--e-8);
+  }
+
+  .zones__secteur h2 {
+    font-size: var(--t-4);
+    padding-top: var(--e-3);
+    border-top: 2px solid var(--encre);
+  }
+
+  .zones__secteur ul {
+    margin-top: var(--e-3);
+  }
+
+  .zones__secteur li {
+    padding-block: var(--e-2);
+    border-bottom: var(--filet);
+  }
+
+  .zones__secteur a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-weight: 700;
+    color: var(--encre);
+  }
+
+  .zones__secteur span {
+    display: block;
+    font-size: var(--t-small);
+    color: var(--encre-2);
+  }
+
+  .zones-suite {
+    border-top: var(--filet);
+  }
+
+  .zones-suite p {
+    margin-top: var(--e-3);
+    color: var(--encre-2);
+  }
+
+  .zones-suite__actions {
+    margin-top: var(--e-6);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--e-3);
+  }
+
+  @media (min-width: 48rem) {
+    .zones__grille {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--e-8) var(--e-6);
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .zones__grille {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
