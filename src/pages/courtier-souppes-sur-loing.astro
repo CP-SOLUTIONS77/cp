@@ -1,0 +1,61 @@
+---
+import Ville from '../layouts/Ville.astro';
+import { googleReviews } from '../config/site.ts';
+
+const faq = [
+  {
+    question: "Puis-je changer d'assurance habitation après un sinistre ?",
+    answer:
+      "Oui. Après un an de contrat, vous pouvez résilier votre assurance habitation à tout moment, sans frais ni justification, et le nouvel assureur peut se charger des démarches. Un sinistre en cours reste géré par l'ancien assureur.",
+  },
+  {
+    question: "Ma cotisation habitation a fortement augmenté, que faire ?",
+    answer:
+      "Comparer. Les assureurs n'apprécient pas tous le risque d'une commune de la même façon, et les écarts de tarif peuvent être importants à garanties comparables. Nous mettons plusieurs assureurs en concurrence pour vous.",
+  },
+  {
+    question: "Faut-il venir à Montereau pour être suivi ?",
+    answer:
+      "Non. L'agence est à environ 35 minutes, mais la plupart de nos clients du secteur gèrent tout par téléphone et par e-mail. Vous venez seulement si vous le souhaitez.",
+  },
+];
+---
+
+<Ville
+  slug="courtier-souppes-sur-loing"
+  title={"Courtier assurance et crédit à Souppes-sur-Loing"}
+  description={"Courtier indépendant pour Souppes-sur-Loing, Château-Landon et Bagneaux-sur-Loing : assurance habitation, auto, prêt immobilier, assurance emprunteur. Étude gratuite."}
+  h1={"Courtier en assurance et en crédit à Souppes-sur-Loing et Château-Landon"}
+  chapeau={"Dans la vallée du Loing, Souppes-sur-Loing, Château-Landon et Bagneaux-sur-Loing ont été durement touchées par la crue de juin 2016. Depuis, beaucoup d'habitants regardent leur assurance habitation d'un autre œil, et constatent que leur cotisation a évolué. CP Solutions, courtier indépendant installé à Montereau-Fault-Yonne, à environ 35 minutes, compare pour vous les contrats et les financements."}
+  venir={"À environ 35 minutes en voiture de Souppes-sur-Loing. La majorité des démarches se fait par téléphone et par e-mail, sans déplacement."}
+  faq={faq}
+>
+  <h2>Votre assurance habitation, remise à plat</h2>
+  <p>Votre cotisation a augmenté ou vous doutez de vos garanties ? Nous mettons plusieurs assureurs partenaires en concurrence, à garanties comparables, et nous vérifions avec vous :</p>
+  <ul>
+  <li>la <strong>garantie catastrophes naturelles</strong> et sa franchise ;</li>
+  <li>les <strong>dégâts des eaux</strong> et les plafonds d'indemnisation ;</li>
+  <li>la <strong>déclaration de votre logement</strong> : surface, sous-sol, dépendances, biens de valeur.</li>
+  </ul>
+  <p class="liens">→ <a href="/assurances/habitation">Assurance habitation</a></p>
+  <h2>Assurance auto et moto</h2>
+  <p>Nous comparons les offres de plusieurs assureurs et trouvons des solutions pour les conducteurs résiliés, malussés ou à permis annulé.</p>
+  <p class="liens">→ <a href="/assurances/auto-moto">Assurance auto-moto</a></p>
+  <h2>Acheter ou alléger votre crédit</h2>
+  <ul>
+  <li><strong>Prêt immobilier</strong> : capacité d'emprunt, mise en concurrence des banques, montage du dossier.</li>
+  <li><strong>Assurance emprunteur</strong> : changement possible à tout moment grâce à la loi Lemoine.</li>
+  <li><strong>Rachat de crédit</strong>, quand il est réellement pertinent pour votre budget.</li>
+  </ul>
+  <p class="liens">→ <a href="/credits/immobilier">Prêt immobilier</a> · <a href="/assurance-emprunteur">Assurance emprunteur</a> · <a href="/credits/rachat-regroupement">Rachat de crédit</a></p>
+  <h2>Mutuelle santé</h2>
+  <p>Nous comparons les complémentaires santé pour les familles, les retraités et les indépendants, en partant de vos dépenses réelles.</p>
+  <p class="liens">→ <a href="/assurances/autres">Mutuelle et autres assurances</a></p>
+  <h2>Pourquoi CP Solutions ?</h2>
+  <ul>
+  <li><strong>Indépendant</strong> : nous comparons, nous ne vendons pas de produit maison.</li>
+  <li><strong>Pédagogue</strong> : nous vous expliquons ce que votre contrat couvre vraiment.</li>
+  <li><strong>Joignable</strong> : deux courtiers qui suivent votre dossier.</li>
+  <li><strong>Noté {googleReviews.rating}/5 sur Google</strong>.</li>
+  </ul>
+</Ville>

@@ -1,0 +1,54 @@
+---
+import Ville from '../layouts/Ville.astro';
+import { googleReviews } from '../config/site.ts';
+
+const faq = [
+  {
+    question: "Faut-il renégocier son prêt ou changer d'assurance emprunteur ?",
+    answer:
+      "Ce sont deux leviers différents. La renégociation dépend des taux du moment, du capital restant dû et des frais de l'opération. Le changement d'assurance emprunteur est possible à tout moment grâce à la loi Lemoine. Nous faisons le calcul pour vous dire ce qui est réellement avantageux.",
+  },
+  {
+    question: "Ma maison est proche de la Seine : suis-je couvert en cas de crue ?",
+    answer:
+      "En cas d'inondation, l'indemnisation passe en général par la garantie catastrophes naturelles incluse dans les contrats habitation, et suppose qu'un arrêté de catastrophe naturelle soit publié pour la commune. Une franchise s'applique. Nous vérifions avec vous les garanties et les exclusions de votre contrat.",
+  },
+  {
+    question: "J'achète pour louer, quelle assurance prévoir ?",
+    answer:
+      "En tant que bailleur, une assurance propriétaire non occupant (PNO) vous protège quand le locataire n'est pas responsable ou quand le logement est vide. Elle est obligatoire en copropriété. Nous la comparons avec votre financement.",
+  },
+];
+---
+
+<Ville
+  slug="courtier-champagne-sur-seine"
+  title={"Courtier crédit immobilier et assurance à Champagne-sur-Seine"}
+  description={"Courtier indépendant pour Champagne-sur-Seine, Saint-Mammès, Thomery et Vernou-la-Celle : prêt immobilier, renégociation, assurance emprunteur, habitation. Étude gratuite."}
+  h1={"Courtier en crédit immobilier et en assurance à Champagne-sur-Seine"}
+  chapeau={"Entre la Seine et la forêt de Fontainebleau, Champagne-sur-Seine, Saint-Mammès, Thomery et Vernou-la-Celle-sur-Seine séduisent ceux qui veulent un cadre agréable tout en restant reliés à Paris par la ligne R. CP Solutions, courtier indépendant en crédit et en assurance, accompagne les projets du secteur depuis son agence de Montereau-Fault-Yonne, à environ 15 minutes."}
+  venir={"À environ 15 minutes en voiture de Champagne-sur-Seine. En train, Champagne-sur-Seine et Montereau sont sur la ligne R du Transilien, et l'agence est à une dizaine de minutes à pied de la gare de Montereau. Beaucoup de démarches se font aussi par téléphone et par e-mail."}
+  faq={faq}
+>
+  <h2>Financer votre achat en bord de Seine</h2>
+  <p>Maison avec jardin, appartement près de la gare, bien à rénover : nous montons votre financement de bout en bout.</p>
+  <ul>
+  <li><strong>Capacité d'emprunt</strong> et budget global, travaux éventuels compris.</li>
+  <li><strong>Mise en concurrence de plusieurs banques partenaires</strong> sur l'ensemble du coût : taux, assurance, frais, garantie.</li>
+  <li><strong>Suivi du dossier</strong> jusqu'à la signature chez le notaire.</li>
+  </ul>
+  <p class="liens">→ <a href="/credits/immobilier">Prêt immobilier</a></p>
+  <h2>Déjà propriétaire ? Réduire le coût de votre crédit</h2>
+  <p>Deux leviers existent, et ils ne se valent pas selon votre situation : renégocier ou faire racheter votre prêt quand les taux le permettent, ou changer d'assurance emprunteur, ce qui est possible à tout moment grâce à la loi Lemoine. Nous faisons le calcul et vous disons franchement si l'opération est intéressante.</p>
+  <p class="liens">→ <a href="/assurance-emprunteur">Assurance emprunteur</a> · <a href="/credits/rachat-regroupement">Rachat de crédit</a></p>
+  <h2>Assurer un logement près de l'eau</h2>
+  <p>À Saint-Mammès, au confluent du Loing et de la Seine, comme dans tous les villages riverains, il vaut mieux connaître précisément ses garanties. Nous relisons votre contrat habitation : catastrophes naturelles, dégâts des eaux, franchises, plafonds. Nous assurons aussi les biens mis en location (assurance propriétaire non occupant).</p>
+  <p class="liens">→ <a href="/assurances/habitation">Assurance habitation</a></p>
+  <h2>Pourquoi CP Solutions ?</h2>
+  <ul>
+  <li><strong>Indépendant</strong> : nous n'avons aucun produit maison à placer.</li>
+  <li><strong>À 15 minutes</strong> : une agence physique, des courtiers joignables.</li>
+  <li><strong>Transparent</strong> : nous expliquons chaque proposition, chiffres à l'appui.</li>
+  <li><strong>Noté {googleReviews.rating}/5 sur Google</strong>.</li>
+  </ul>
+</Ville>

@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { site, contact, address, footerNav, social, areaServed } from '../config/site.ts';
+import { site, contact, address, footerNav, social } from '../config/site.ts';
+import { villes } from '../config/villes.ts';
 import { orias } from '../config/legal.ts';
 import Horaires from './Horaires.astro';
 
@@ -67,10 +68,12 @@ const annee = new Date().getFullYear();
     </div>
 
     <div class="footer__zone">
-      <p>
-        <span class="libelle">Zone desservie</span>
-        {areaServed.join(' · ')}
-      </p>
+      <p class="libelle">Zone desservie</p>
+      <ul class="footer__villes">
+        <li><a href="/agence-montereau">Montereau-Fault-Yonne</a></li>
+        {villes.map((v) => <li><a href={`/${v.slug}`}>{v.nom}</a></li>)}
+        <li><a href="/zones-intervention">Toutes nos zones</a></li>
+      </ul>
     </div>
 
     <div class="footer__bas">
@@ -211,8 +214,24 @@ const annee = new Date().getFullYear();
   }
 
   .footer__zone .libelle {
-    display: block;
     margin-bottom: var(--e-1);
+  }
+
+  .footer__villes {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--e-4);
+  }
+
+  .footer__villes a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--encre-2);
+  }
+
+  .footer__villes a:hover {
+    color: var(--encre);
   }
 
   .footer__bas {

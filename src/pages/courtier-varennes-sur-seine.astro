@@ -1,0 +1,54 @@
+---
+import Ville from '../layouts/Ville.astro';
+import { googleReviews } from '../config/site.ts';
+
+const faq = [
+  {
+    question: "L'assurance auto de mon jeune conducteur est très chère, que faire ?",
+    answer:
+      "Les tarifs jeunes conducteurs varient beaucoup d'un assureur à l'autre. Nous comparons plusieurs offres et regardons ce qui peut alléger la prime, comme le fait d'avoir suivi la conduite accompagnée ou le choix des garanties.",
+  },
+  {
+    question: "Puis-je regrouper toutes mes assurances chez vous ?",
+    answer:
+      "Oui. Auto, habitation, mutuelle, assurance emprunteur : nous pouvons gérer l'ensemble de vos contrats, chacun chez l'assureur le mieux adapté, avec un seul interlocuteur.",
+  },
+  {
+    question: "Vous occupez-vous de résilier mon ancien contrat ?",
+    answer:
+      "Pour la plupart des contrats auto et habitation de plus d'un an, la résiliation est possible à tout moment et le nouvel assureur peut se charger des démarches. Nous vérifions avec vous les règles qui s'appliquent à votre contrat.",
+  },
+];
+---
+
+<Ville
+  slug="courtier-varennes-sur-seine"
+  title={"Courtier assurance et crédit à Varennes-sur-Seine"}
+  description={"Courtier indépendant à 5 minutes de Varennes-sur-Seine, Marolles-sur-Seine et Cannes-Écluse : assurance auto, habitation, mutuelle, prêt immobilier. Étude gratuite."}
+  h1={"Courtier en assurance et en crédit pour Varennes-sur-Seine, Marolles et Cannes-Écluse"}
+  chapeau={"Vous habitez Varennes-sur-Seine, Marolles-sur-Seine, Cannes-Écluse ou Esmans ? Notre agence est juste à côté, à Montereau-Fault-Yonne, à environ 5 minutes en voiture. Inutile de passer par une plateforme en ligne : CP Solutions est un courtier indépendant qui compare pour vous les assurances et les crédits, et vous pouvez passer nous voir quand vous le souhaitez."}
+  venir={"À environ 5 minutes en voiture de Varennes-sur-Seine et de Cannes-Écluse, une dizaine de minutes de Marolles-sur-Seine. Stationnement en zone bleue devant l'agence (disque obligatoire)."}
+  faq={faq}
+>
+  <h2>Votre assurance auto, vraiment comparée</h2>
+  <p>Trajets quotidiens, jeune conducteur dans la famille, deuxième voiture : l'assurance auto pèse vite dans le budget. Nous interrogeons plusieurs assureurs partenaires et vous présentons les écarts de garanties, pas seulement de prix.</p>
+  <ul>
+  <li><strong>Jeunes conducteurs</strong> : les tarifs varient fortement d'un assureur à l'autre, la comparaison est d'autant plus utile.</li>
+  <li><strong>Profils résiliés ou malussés</strong> : nous connaissons les assureurs qui acceptent ces dossiers.</li>
+  <li><strong>Motos et scooters</strong>, y compris pour les trajets de tous les jours.</li>
+  </ul>
+  <p class="liens">→ <a href="/assurances/auto-moto">Assurance auto-moto</a></p>
+  <h2>Premier achat : on commence par votre budget</h2>
+  <p>Avant de visiter, il faut savoir ce que vous pouvez emprunter. Nous calculons votre capacité d'emprunt, votre budget global (frais de notaire et de garantie compris) et nous mettons plusieurs banques partenaires en concurrence. Vous restez libre de choisir votre assurance emprunteur, et nous la comparons aussi.</p>
+  <p class="liens">→ <a href="/credits/immobilier">Prêt immobilier</a> · <a href="/credits#simulateur">Simulateur de capacité d'emprunt</a> · <a href="/assurance-emprunteur">Assurance emprunteur</a></p>
+  <h2>Habitation et mutuelle, au même endroit</h2>
+  <p>Propriétaire, locataire ou bailleur, nous comparons les assurances habitation selon votre logement réel. Côté santé, nous cherchons une mutuelle adaptée à vos dépenses (optique, dentaire, hospitalisation) plutôt qu'une formule standard.</p>
+  <p class="liens">→ <a href="/assurances/habitation">Assurance habitation</a> · <a href="/assurances/autres">Mutuelle et autres assurances</a></p>
+  <h2>Pourquoi un courtier à 5 minutes de chez vous ?</h2>
+  <ul>
+  <li><strong>Une vraie agence</strong>, où l'on peut déposer un document ou poser une question de vive voix.</li>
+  <li><strong>Indépendant</strong> : plusieurs assureurs et banques partenaires comparés, aucun produit maison.</li>
+  <li><strong>Un seul interlocuteur</strong> pour l'auto, la maison, la santé et le crédit.</li>
+  <li><strong>Noté {googleReviews.rating}/5 sur Google</strong>.</li>
+  </ul>
+</Ville>

@@ -1,0 +1,52 @@
+---
+import Ville from '../layouts/Ville.astro';
+import { googleReviews } from '../config/site.ts';
+
+const faq = [
+  {
+    question: "Peut-on assurer plusieurs voitures chez le même assureur ?",
+    answer:
+      "Oui, et certains assureurs accordent des conditions intéressantes quand plusieurs véhicules du foyer sont assurés chez eux. Ce n'est pas systématique : nous comparons les deux options, regroupée ou séparée.",
+  },
+  {
+    question: "Quels documents préparer pour une étude de prêt immobilier ?",
+    answer:
+      "En général : pièces d'identité, derniers bulletins de salaire, derniers avis d'imposition, relevés de comptes récents, justificatifs d'épargne et tableaux d'amortissement des crédits en cours. Nous vous envoyons la liste précise selon votre situation.",
+  },
+  {
+    question: "Le rachat de crédit peut-il inclure mon prêt immobilier ?",
+    answer:
+      "Oui, il peut regrouper un prêt immobilier et des crédits à la consommation. L'opération obéit alors à des règles spécifiques et son coût total doit être examiné attentivement. Nous vous présentons les chiffres avant toute décision.",
+  },
+];
+---
+
+<Ville
+  slug="courtier-le-chatelet-en-brie"
+  title={"Courtier assurance et crédit au Châtelet-en-Brie"}
+  description={"Courtier indépendant pour Le Châtelet-en-Brie, Échouboulains, Valence-en-Brie et Féricy : prêt immobilier, rachat de crédit, assurance auto, mutuelle. Étude gratuite."}
+  h1={"Courtier en assurance et en crédit au Châtelet-en-Brie"}
+  chapeau={"Entre Melun et Montereau, Le Châtelet-en-Brie et les villages voisins (Échouboulains, Valence-en-Brie, Féricy, Machault) offrent la campagne briarde sans être loin de tout. Ici, on vit souvent en maison, avec une ou deux voitures et un budget familial à tenir. CP Solutions, courtier indépendant installé à Montereau-Fault-Yonne, à environ 20 minutes, vous aide à le faire au mieux."}
+  venir={"À environ 20 minutes en voiture du Châtelet-en-Brie. La plupart des dossiers se traitent par téléphone et par e-mail : vous ne vous déplacez que si vous le souhaitez."}
+  faq={faq}
+>
+  <h2>Assurer les voitures du foyer</h2>
+  <p>Quand la voiture est indispensable au quotidien, autant bien l'assurer sans payer trop. Nous comparons les offres de plusieurs assureurs pour chaque véhicule, et nous regardons s'il est plus avantageux de les regrouper ou non. Nous trouvons aussi des solutions pour les conducteurs résiliés ou malussés.</p>
+  <p class="liens">→ <a href="/assurances/auto-moto">Assurance auto-moto</a></p>
+  <h2>Acheter une maison dans la Brie</h2>
+  <p>Nous évaluons votre capacité d'emprunt, préparons un dossier solide et mettons plusieurs banques partenaires en concurrence. Nous comparons aussi l'assurance emprunteur, que vous êtes libre de choisir et qui pèse dans le coût total.</p>
+  <p class="liens">→ <a href="/credits/immobilier">Prêt immobilier</a> · <a href="/assurance-emprunteur">Assurance emprunteur</a> · <a href="/credits#simulateur">Simulateur</a></p>
+  <h2>Des mensualités trop lourdes ?</h2>
+  <p>Prêt auto, crédit travaux, crédit renouvelable : quand les remboursements s'accumulent, le regroupement de crédits peut réduire la mensualité. En contrepartie, la durée s'allonge et le coût total peut augmenter. Nous étudions votre situation et vous disons honnêtement si c'est la bonne solution.</p>
+  <p class="liens">→ <a href="/credits/rachat-regroupement">Rachat et regroupement de crédits</a></p>
+  <h2>Mutuelle et habitation</h2>
+  <p>Mutuelle familiale ajustée à vos vraies dépenses, assurance habitation qui tient compte de votre maison (dépendances, piscine, objets de valeur) : nous comparons et vous expliquons les différences.</p>
+  <p class="liens">→ <a href="/assurances/autres">Mutuelle</a> · <a href="/assurances/habitation">Habitation</a></p>
+  <h2>Pourquoi CP Solutions ?</h2>
+  <ul>
+  <li><strong>Indépendant</strong> : plusieurs assureurs et banques partenaires comparés.</li>
+  <li><strong>Humain</strong> : deux courtiers qui suivent votre dossier, joignables par téléphone.</li>
+  <li><strong>Tout au même endroit</strong> : auto, maison, santé et crédit.</li>
+  <li><strong>Noté {googleReviews.rating}/5 sur Google</strong>.</li>
+  </ul>
+</Ville>
