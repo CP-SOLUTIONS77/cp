@@ -1,0 +1,177 @@
+---
+import { partners } from '../config/partners.ts';
+
+/**
+ * Bandeau défilant des partenaires assurance, de gauche à droite.
+ *
+ * Tout en CSS, sans JavaScript. La liste est rendue deux fois à la suite : la
+ * piste glisse d'une demi-longueur puis repart, ce qui donne une boucle sans
+ * couture. La copie est masquée aux lecteurs d'écran.
+ *
+ * Le défilement s'arrête au survol et au focus. Si le visiteur a demandé
+ * moins d'animations, les logos s'affichent en grille fixe.
+ */
+interface Props {
+  titre?: string;
+}
+
+const { titre = 'Nos partenaires assurance' } = Astro.props;
+
+// Environ 3 secondes par partenaire : assez lent pour lire chaque nom.
+const duree = `${partners.length * 3}s`;
+---
+
+<section class="partenaires section" aria-labelledby="partenaires-titre" data-metier="assurances">
+  <div class="conteneur partenaires__entete">
+    <h2 id="partenaires-titre">{titre}</h2>
+    <p class="mesure">
+      Nous comparons les offres de {partners.length} compagnies et courtiers grossistes
+      pour trouver celle qui vous correspond.
+    </p>
+  </div>
+
+  <div class="partenaires__fenetre">
+    <div class="partenaires__piste" style={`--duree-defilement: ${duree}`}>
+      {
+        [false, true].map((copie) => (
+          <ul class="partenaires__liste" aria-hidden={copie ? 'true' : undefined}>
+            {partners.map((p) => (
+              <li class="partenaire">
+                {p.logo ? (
+                  <img
+                    src={`/images/partenaires/${p.logo}`}
+                    alt={copie ? '' : p.name}
+                    title={p.name}
+                    loading="lazy"
+                    decoding="async"
+                    height="48"
+                  />
+                ) : (
+                  <span class="partenaire__nom">{p.name}</span>
+                )}
+              </li>
+            ))}
+          </ul>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .partenaires {
+    overflow: hidden;
+    border-block: var(--filet);
+  }
+
+  .partenaires__entete {
+    margin-bottom: var(--e-8);
+  }
+
+  .partenaires__entete h2 {
+    margin-bottom: var(--e-3);
+  }
+
+  .partenaires__entete p {
+    color: var(--encre-2);
+  }
+
+  /* Fondu sur les bords : les logos apparaissent et disparaissent en douceur. */
+  .partenaires__fenetre {
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  .partenaires__piste {
+    display: flex;
+    width: max-content;
+    animation: defilement var(--duree-defilement, 90s) linear infinite;
+  }
+
+  .partenaires__piste:hover,
+  .partenaires__piste:focus-within {
+    animation-play-state: paused;
+  }
+
+  .partenaires__liste {
+    display: flex;
+    align-items: center;
+    gap: var(--e-4);
+    padding: 0 var(--e-4) 0 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .partenaire {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 11rem;
+    height: 5.5rem;
+    padding: var(--e-4);
+    background: var(--papier-3);
+    border: var(--filet);
+    border-radius: var(--rayon);
+  }
+
+  @media (max-width: 40rem) {
+    .partenaire {
+      width: 8rem;
+      height: 4.25rem;
+      padding: var(--e-3);
+    }
+
+    .partenaire__nom {
+      font-size: var(--t-small);
+    }
+  }
+
+  .partenaire img {
+    max-width: 100%;
+    max-height: 3rem;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .partenaire__nom {
+    font-size: var(--t-4);
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;
+    color: var(--encre);
+  }
+
+  /* De gauche à droite : la piste part décalée d'une demi-longueur vers la gauche. */
+  @keyframes defilement {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .partenaires__fenetre {
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+
+    .partenaires__piste {
+      width: auto;
+      animation: none !important;
+      transform: none;
+    }
+
+    .partenaires__liste {
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0 var(--gouttiere);
+    }
+
+    .partenaires__liste[aria-hidden='true'] {
+      display: none;
+    }
+  }
+</style>

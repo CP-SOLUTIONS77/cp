@@ -6,6 +6,7 @@ import Tampon from '../components/Tampon.astro';
 import Horaires from '../components/Horaires.astro';
 import Photo from '../components/Photo.astro';
 import AvisGoogle from '../components/AvisGoogle.astro';
+import Partenaires from '../components/Partenaires.astro';
 import { site, contact, address, team, quoteForms } from '../config/site.ts';
 
 const paul = team.find((m) => m.id === 'paul')!;
@@ -197,6 +198,9 @@ const credits = [
       </div>
     </div>
   </section>
+
+  <!-- Juste après « nous comparons pour vous » : les compagnies que l'on compare. -->
+  <Partenaires />
 
   <AvisGoogle />
 
