@@ -1,13 +1,14 @@
 /**
  * Paramètres du simulateur de capacité d'emprunt.
- * À mettre à jour à la main quand les taux bougent : changer `nominalRate`
- * et `updatedAt`, rien d'autre. La date est affichée sous le simulateur.
+ * Mis à jour chaque mois : le cabinet donne son taux nominal sur 25 ans, hors
+ * assurance. Changer `nominalRate` et `updatedAt`, rien d'autre. La date est
+ * affichée sous le simulateur.
  */
 export const rates = {
   /** Taux nominal annuel, en pourcentage. */
-  nominalRate: 3.45,
+  nominalRate: 4.0,
   /** Date de la dernière mise à jour du taux (AAAA-MM-JJ). */
-  updatedAt: '2026-08-28',
+  updatedAt: '2026-11-19',
   /** Taux d'endettement maximal (recommandation HCSF : 35 % assurance comprise). */
   maxDebtRatio: 0.35,
   /** Bornes des curseurs. */
@@ -19,5 +20,5 @@ export const rates = {
   },
 } as const;
 
-/** Au-delà de ce délai sans mise à jour, le build avertit. */
-export const RATE_STALE_AFTER_DAYS = 180;
+/** Au-delà de ce délai sans mise à jour, le build avertit : le taux est revu chaque mois. */
+export const RATE_STALE_AFTER_DAYS = 45;
